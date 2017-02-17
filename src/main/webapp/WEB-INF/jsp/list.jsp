@@ -8,9 +8,21 @@
 <%-- <%@include file="/WEB-INF/jsp/common/head.jsp"%> --%>
 <%@include file="/WEB-INF/jsp/common/taglib.jsp"%>
 <script type="text/javascript"
-	src="<%=basePath%>resources/bootstrap3.3.5/js/bootstrap.min.js"></script>
+	src="<%=basePath%>resources/js/jquery-1.11.1.js"></script>
+<script type="text/javascript"
+	src="<%=basePath%>resources/js/jquery.bootstrap.newsbox.min.js"></script>
+<script type="text/javascript"
+	src="<%=basePath%>resources/js/echarts.min.js"></script>
 <link rel="stylesheet" style="text/css"
 	href="<%=basePath%>resources/bootstrap3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" style="text/css"
+	href="<%=basePath%>resources/bootstrap3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" style="text/css"
+	href="<%=basePath%>resources/css/default.css">
+<link rel="stylesheet" style="text/css"
+	href="<%=basePath%>resources/css/normalize.css">
+<link rel="stylesheet" style="text/css"
+	href="<%=basePath%>resources/css/site.css">
 </head>
 <body>
 	<div class="container">
@@ -98,7 +110,15 @@
 				</table>
 				
 			</div>
+			
 		</div>
 	</div>
+	<%-- <div id="ditu" style="width: 600px;height:400px;"></div>
+	<script type="text/javascript" src="<%=basePath%>resources/js/worldecharts.js"></script>
+	<script type="text/javascript" src="<%=basePath%>resources/js/world.js"></script>
+	
+	<script type="text/javascript">
+	echartDitu();
+	</script> --%>
 </body>
 </html>

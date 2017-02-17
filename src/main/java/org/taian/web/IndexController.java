@@ -12,4 +12,10 @@ public class IndexController {
 	public String login(){
 		return "login";
 	}
+	
+	@RequestMapping(value="/user", method = RequestMethod.GET )
+	public String user(){
+		return "user";
+	}
+	
 }

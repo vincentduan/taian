@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>index</title>
 <%-- <%@include file="/WEB-INF/jsp/common/head.jsp"%> --%>
 <%@include file="/WEB-INF/jsp/common/taglib.jsp"%>
@@ -11,6 +11,9 @@
 	src="<%=basePath%>resources/js/jquery-1.11.1.js"></script>
 <script type="text/javascript"
 	src="<%=basePath%>resources/js/jquery.bootstrap.newsbox.min.js"></script>
+<script type="text/javascript"
+	src="<%=basePath%>resources/js/echarts.min.js"></script>
+
 <link rel="stylesheet" style="text/css"
 	href="<%=basePath%>resources/bootstrap3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" style="text/css"
@@ -62,6 +65,18 @@
 											</div>
 										</div>
 										<div class="form-group ">
+											<label class="col-sm-2 control-label">社交：</label>
+											<div class="col-sm-10">
+												<p class="form-control-static"><a href="#">Hussain(facebook)</a></p>
+											</div>
+										</div>
+										<div class="form-group ">
+											<label class="col-sm-2 control-label">电话：</label>
+											<div class="col-sm-10">
+												<p class="form-control-static"><a href="#">(123) 456-7890</a></p>
+											</div>
+										</div>
+										<div class="form-group ">
 											<label class="col-sm-2 control-label">威胁程度：</label>
 											<div class="col-sm-10">
 												<a class="btn btn-danger disabled" role="button">危险</a>
@@ -70,61 +85,192 @@
 									</div>
 						</div>
 	<div class="tab-pane fade" id="track">
-		<div class="row">
-			<div class="col-md-3">
-				<div class="form-inline">
-					<div class="form-group">
-						<label for="name" class="control-label">日期</label> <input type="text" class="form-control" id="date">
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<label for="source" class="control-label">出发地</label> <input
-					type="text" class="form-control" id="source">
-			</div>
-			<div class="col-md-3">
-				<label for="destination" class="control-label">目的地</label> <input
-					type="text" class="form-control" id="destination">
-			</div>
-			<div class="col-md-3">
-				<button type="submit" onclick="search();"
-					class="btn btn-primary">查询</button>
-			</div>
+		<p></p>
+		<div id="ditu" style="width: 750px;height:400px;">
 		</div>
 		<p></p>
-		<%-- <div class="form-inline">
-			<div class="form-group">
-				<label for="name" class="control-label">日期</label> <input
-					type="text" class="form-control" id="date">
-			</div>
-			<div class="form-group">
-				<label for="source" class="control-label">出发地</label> <input
-					type="text" class="form-control" id="source">
-			</div>
-			<div class="form-group">
-				<label for="destination" class="control-label">目的地</label> <input
-					type="text" class="form-control" id="destination">
-			</div>
+		<div class="form-horizontal">
 			<div class="form-group ">
-				<label for="hotel" class="control-label">入住酒店</label> <select
-					class="form-control" id="hotel">
-					<c:forEach items="${list_hotel }" var="hotel">
-						<option value="${hotel }">${hotel }</option>
-					</c:forEach>
-				</select>
+				<label class="col-md-2 control-label">日期:</label>
+				<div class="col-md-5">
+					<input type="text" class="form-control" id="date">
+				</div>
 			</div>
-			<button type="submit" onclick="search();"
-				class="btn btn-primary">查询</button>
-		</div> --%>
+			<div class="form-group">
+				<label for="source" class="col-md-2 control-label">出发地:</label>
+				<div class="col-md-5">
+					<input type="text" class="form-control" id="source">
+				</div>
+			</div>	
+			<div class="form-group">
+				<label for="destination" class="col-md-2 control-label">目的地</label>
+				<div class="col-md-5">
+					<input type="text" class="form-control" id="destination">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="hotel" class="col-md-2 control-label">入住酒店</label>
+				<div class="col-md-5">
+					<select class="form-control" id="hotel">
+						<c:forEach items="${list_hotel }" var="hotel">
+							<option value="${hotel }">${hotel }</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="col-md-offset-7">
+					<button type="submit" onclick="search();" class="btn btn-primary">查询</button>
+				</div>
+			</div>
+		</div>
+		<div>
+			<table id="contentTable" class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>日期</th>
+						<th>航班</th>
+						<th>出发地</th>
+						<th>目的地</th>
+						<th>入住酒店</th>
+						<th>同行联系人</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>20100601</th>
+						<th>PK301</th>
+						<th>伊斯兰堡</th>
+						<th>卡拉奇</th>
+						<th>卡拉奇酒店</th>
+						<th>Jack Doson</th>
+					</tr>
+					<tr>
+						<th>20100601</th>
+						<th>PK301</th>
+						<th>伊斯兰堡</th>
+						<th>卡拉奇</th>
+						<th>卡拉奇酒店</th>
+						<th>Jack Doson</th>
+					</tr>
+					<tr>
+						<th>20100601</th>
+						<th>PK301</th>
+						<th>伊斯兰堡</th>
+						<th>卡拉奇</th>
+						<th>卡拉奇酒店</th>
+						<th>Jack Doson</th>
+					</tr>
+					<tr>
+						<th>20100601</th>
+						<th>PK301</th>
+						<th>伊斯兰堡</th>
+						<th>卡拉奇</th>
+						<th>卡拉奇酒店</th>
+						<th>Jack Doson</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
+	<!-- track end -->
 	<div class="tab-pane fade" id="mediaCoverage">
-		<p>媒体报道</p>
+		<p></p>
+		
+		<div id="mc" style="width: 750px;height:400px">
+		</div>
+		<table id="contentTable" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>媒体</th>
+					<th>报道数量</th>
+					<th>负面报道占比</th>
+					<th>最近一个月的报道数量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr><td><a href="#">BBC</a></td><td>32篇(<a href="#">详细列表</a>)</td><td>80%</td><td>20篇(<a href="#">详细内容</a>)</td></tr>
+				<tr><td><a href="#">CNN</a></td><td>50篇(<a href="#">详细列表</a>)</td><td>30%</td><td>10篇(<a href="#">详细内容</a>)</td></tr>
+				<tr><td><a href="#">VOA</a></td><td>32篇(<a href="#">详细列表</a>)</td><td>80%</td><td>20篇(<a href="#">详细内容</a>)</td></tr>
+				<tr><td><a href="#">NPR</a></td><td>50篇(<a href="#">详细列表</a>)</td><td>30%</td><td>10篇(<a href="#">详细内容</a>)</td></tr>
+			</tbody>
+		</table>
+		<div id="mc2" style="width: 750px;height:400px">
+		</div>
+		<table id="contentTable2" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>搜索引擎</th>
+					<th>被搜索的数量</th>
+					<th>最近一个月的被搜索数量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr><td><a href="#">baidu</a></td><td>32条(<a href="#">详细列表</a>)</td><td>20条(<a href="#">详细内容</a>)</td></tr>
+				<tr><td><a href="#">google</a></td><td>50条(<a href="#">详细列表</a>)</td><td>10条(<a href="#">详细内容</a>)</td></tr>
+				<tr><td><a href="#">bing</a></td><td>32条(<a href="#">详细列表</a>)</td><td>20条(<a href="#">详细内容</a>)</td></tr>
+			</tbody>
+		</table>
+		<div id="mc_modal" class="modal hide fade in" style="display: none; "> 
+	        <div class="modal-header"> 
+	            <a class="close" data-dismiss="modal">×</a> 
+	            <h3>这是一个模态框标题</h3> 
+	        </div> 
+	        <div class="modal-body"> 
+	            <h4>模态框中的文本</h4> 
+	            <p>你可以在这添加一些文本。</p> 
+	        </div> 
+	        <div class="modal-footer"> 
+	            <a href="#" class="btn btn-success">唤醒活动</a> 
+	            <a href="#" class="btn" data-dismiss="modal">关闭</a> 
+	        </div> 
+	    </div> 
 	</div>
 	<div class="tab-pane fade" id="personrel">
-		<p>联系人</p>
+		<p></p>
+		<h4>关系</h4>
+		<dl>
+			<dt>妻子：</dt>
+			<dd>张三(92%),李四(31%)</dd>
+			<dt>儿子：</dt>
+			<dd>王五(100%)</dd>
+			<dt>女儿：</dt>
+			<dd>赵六(100%)</dd>
+		</dl>
+		<hr>
+		<h4>邮箱(3个)</h4>
+		<dl>
+			<dt>1.邮箱 Mamnoon Hussain@google.com</dt>
+			<dd>联系人:  1@google.com, 2@google.com, 3@google.com,4@google.com</dd>
+			<dt>2.邮箱 Mamnoon Hussain@google.com</dt>
+			<dd>联系人:  1@google.com, 2@google.com, 3@google.com</dd>
+			<dt>2.邮箱 Mamnoon Hussain@google.com</dt>
+			<dd>联系人:  1@google.com, 2@google.com, 3@google.com</dd>
+		</dl>
+		<h4>skype(2个)</h4>
+		<dl>
+			<dt>1.邮箱 Mamnoon Hussain@skype.com</dt>
+			<dd>联系人:  1@skype.com, 2@skype.com, 3@skype.com,4@skype.com</dd>
+			<dt>2.邮箱 Mamnoon Hussain@skype.com</dt>
+			<dd>联系人:  1@skype.com, 2@skype.com, 3@skype.com</dd>
+		</dl>
 	</div>
 	<div class="tab-pane fade" id="event">
-		<p>事件</p>
+		<p></p>
+		<table id="contentTable" class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>日期</th>
+						<th>事件</th>
+						<th>地点</th>
+						<th>设备信息</th>
+						<th>详情</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>20100512</td><td>使用电脑登陆Facebook</td><td>卡拉奇</td><td>IP地址:192.0.0.1</td><td><a href="#">详细信息</a></td></tr>
+					<tr><td>20121002</td><td>发表关于XXX的评论</td><td>卡拉奇</td><td>IP地址:192.0.0.1</td><td><a href="#">详细信息</a></td></tr>
+					<tr><td>20140211</td><td>出席XXXX国际会议</td><td>白沙瓦</td><td>无</td><td><a href="#">详细信息</a></td></tr>
+				</tbody>
+			</table>
 	</div>
 </div>
 					
@@ -215,27 +361,30 @@
 		</div>
 		<hr>
 	</div>
+<script type="text/javascript" src="<%=basePath%>resources/js/worldecharts.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/js/world.js"></script>
 <script type="text/javascript">
+
 $(function () {
-$(".demo1").bootstrapNews({
-		newsPerPage: 5,
-		autoplay: true,
-		pauseOnHover:true,
-		direction: 'up',
-		newsTickerInterval: 2000,
-		onToDo: function () {
-		}
+	$(".demo1").bootstrapNews({
+			newsPerPage: 5,
+			autoplay: true,
+			pauseOnHover:true,
+			direction: 'up',
+			newsTickerInterval: 2000,
+			onToDo: function () {
+			}
+		});
+	$("#myTab li a").click(function(){
+		var name = $(this).attr("tab");
+		$("#myTab li").removeClass("active");
+		$(this).parent().attr("class", "active");
+		console.log(name);
+		$("#myTabContent").children().attr("class","tab-pane fade");
+		$("#" + name).attr("class","tab-pane fade in active");
 	});
-$("#myTab li a").click(function(){
-	var name = $(this).attr("tab");
-	$("#myTab li").removeClass("active");
-	$(this).parent().attr("class", "active");
-	console.log(name);
-	$("#myTabContent").children().attr("class","tab-pane fade");
-	$("#" + name).attr("class","tab-pane fade in active");
 });
 
-});
 function showTab(){
 	console.log($(this));
 	/* $("#myTab li:eq(0)").removeClass("active");
@@ -245,7 +394,146 @@ function showTab(){
 	$(":not(this)").removeClass("active");
 	$(this).attr("class", "active");
 	
-} 
+}
+
+function echartMC(){
+	var myChart = echarts.init(document.getElementById('mc'));
+	console.log("echartMC");
+    // 指定图表的配置项和数据
+    var option = {
+    		title: {
+    	        text: '一周内媒体报道情况',
+    	        subtext: '纯属虚构'
+    	    },
+    	    tooltip : {
+    	        trigger: 'axis'
+    	    },
+    	    legend: {
+    	        data:['BBC','CNN','VOA','NPR']
+    	    },
+    	    toolbox: {
+    	        feature: {
+    	            saveAsImage: {}
+    	        }
+    	    },
+    	    grid: {
+    	        left: '3%',
+    	        right: '4%',
+    	        bottom: '3%',
+    	        containLabel: true
+    	    },
+    	    xAxis : [
+    	        {
+    	            type : 'category',
+    	            boundaryGap : false,
+    	            data : ['周一','周二','周三','周四','周五','周六','周日']
+    	        }
+    	    ],
+    	    yAxis : [
+    	        {
+    	            type : 'value'
+    	        }
+    	    ],
+    	    series : [
+    	        {
+    	            name:'BBC',
+    	            type:'line',
+    	            smooth: true,
+    	            data:[120, 132, 101, 134, 90, 230, 210]
+    	        },
+    	        {
+    	            name:'CNN',
+    	            type:'line',
+    	            smooth: true,
+    	            data:[220, 182, 191, 234, 290, 330, 310]
+    	        },
+    	        {
+    	            name:'VOA',
+    	            type:'line',
+    	            data:[150, 232, 201, 154, 190, 330, 410]
+    	        },
+    	        {
+    	            name:'NPR',
+    	            type:'line',
+    	            smooth: true,
+    	            data:[320, 332, 301, 334, 390, 330, 210]
+    	        }
+    	    ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    myChart.on("click", function(param){
+    	console.log(param.name+","+param.value);
+    	$("#mc_modal").modal('show');
+    })
+}
+
+echartMC();
+function echartMC2(){
+	var myChart = echarts.init(document.getElementById('mc2'));
+	console.log("echartMC");
+    // 指定图表的配置项和数据
+    var option = {
+    		title: {
+    	        text: '一周内搜索引擎被搜索的情况',
+    	        subtext: '纯属虚构'
+    	    },
+    	    tooltip : {
+    	        trigger: 'axis'
+    	    },
+    	    legend: {
+    	        data:['baidu','google','bing']
+    	    },
+    	    toolbox: {
+    	        feature: {
+    	            saveAsImage: {}
+    	        }
+    	    },
+    	    grid: {
+    	        left: '3%',
+    	        right: '4%',
+    	        bottom: '3%',
+    	        containLabel: true
+    	    },
+    	    xAxis : [
+    	        {
+    	            type : 'category',
+    	            boundaryGap : false,
+    	            data : ['周一','周二','周三','周四','周五','周六','周日']
+    	        }
+    	    ],
+    	    yAxis : [
+    	        {
+    	            type : 'value'
+    	        }
+    	    ],
+    	    series : [
+    	        {
+    	            name:'baidu',
+    	            type:'line',
+    	            smooth: true,
+    	            data:[120, 132, 101, 134, 90, 230, 210]
+    	        },
+    	        {
+    	            name:'google',
+    	            type:'line',
+    	            smooth: true,
+    	            data:[220, 182, 191, 234, 290, 330, 310]
+    	        },
+    	        {
+    	            name:'bing',
+    	            type:'line',
+    	            data:[150, 232, 201, 154, 190, 330, 410]
+    	        }
+    	    ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+}
+echartMC2();
+
+
+
 function search(){
 	var personid = ${person.id };
 	var date = $("#track #date").val();
@@ -289,6 +577,8 @@ function search(){
 
 		});
 	}
+echartDitu();
+
 </script>
 </body>
 </html>
