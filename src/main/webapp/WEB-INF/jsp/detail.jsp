@@ -11,6 +11,8 @@
 	src="<%=basePath%>resources/js/jquery-1.11.1.js"></script>
 <script type="text/javascript"
 	src="<%=basePath%>resources/js/jquery.bootstrap.newsbox.min.js"></script>
+	<script type="text/javascript"
+	src="<%=basePath%>resources/bootstrap3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="<%=basePath%>resources/js/echarts.min.js"></script>
 
@@ -209,20 +211,23 @@
 				<tr><td><a href="#">bing</a></td><td>32条(<a href="#">详细列表</a>)</td><td>20条(<a href="#">详细内容</a>)</td></tr>
 			</tbody>
 		</table>
-		<div id="mc_modal" class="modal hide fade in" style="display: none; "> 
-	        <div class="modal-header"> 
-	            <a class="close" data-dismiss="modal">×</a> 
-	            <h3>这是一个模态框标题</h3> 
-	        </div> 
-	        <div class="modal-body"> 
-	            <h4>模态框中的文本</h4> 
-	            <p>你可以在这添加一些文本。</p> 
-	        </div> 
-	        <div class="modal-footer"> 
-	            <a href="#" class="btn btn-success">唤醒活动</a> 
-	            <a href="#" class="btn" data-dismiss="modal">关闭</a> 
-	        </div> 
-	    </div> 
+		<div class="modal fade" id="mcModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="mcModalLabel">
+							标题
+						</h4>
+					</div>
+					<div class="modal-body" id="mcModalBody">
+						在这里添加一些文本
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
 	</div>
 	<div class="tab-pane fade" id="personrel">
 		<p></p>
@@ -280,6 +285,15 @@
 							<address>
 								<strong>Twitter, Inc.</strong><br> 1355 Market Street, Suite 900<br> San Francisco, CA 94103<br> <abbr title="Phone">P:</abbr> (123) 456-7890
 							</address>
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h3 class="panel-title">警告事件</h3>
+						</div>
+						<div class="panel-body">
+							<p>2017年2月17日,基地组织领导人与Nawaz Sharif入住卡拉奇酒店</p>
+							<p>2017年2月16日,基地组织领导人与Nawaz Sharif进行了电话联系</p>
+						</div>
+					</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<span class="glyphicon glyphicon-list-alt"></span><b>最近30分钟内发生的事件</b></div>
@@ -361,6 +375,7 @@
 		</div>
 		<hr>
 	</div>
+	
 <script type="text/javascript" src="<%=basePath%>resources/js/worldecharts.js"></script>
 <script type="text/javascript" src="<%=basePath%>resources/js/world.js"></script>
 <script type="text/javascript">
@@ -463,9 +478,11 @@ function echartMC(){
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
     myChart.on("click", function(param){
-    	console.log(param.name+","+param.value);
-    	$("#mc_modal").modal('show');
-    })
+    	console.log(param.name+","+param.value+","+param.seriesName);
+    	$("#mcModalLabel").html("<b>"+param.name+"</b><small>&nbsp;&nbsp;详细数据</small>");
+    	$("#mcModalBody").html("<table class='table table-condensed'><thead><tr><th>媒体名称</th><th>报道日期</th><th>内容概述</th></tr></thead><tbody><tr> <td>BBC</td> <td>20160910</td> <td>到底是谁杀死了金正男</td></tr> <tr> <td>CNN</td> <td>20170216</td><td>不是金正恩刺杀的金正男</td> </tr> </tbody></table>")
+    	$("#mcModal").modal('show');
+    }) 
 }
 
 echartMC();
