@@ -7,25 +7,20 @@
 <title>index</title>
 <%-- <%@include file="/WEB-INF/jsp/common/head.jsp"%> --%>
 <%@include file="/WEB-INF/jsp/common/taglib.jsp"%>
-<script type="text/javascript"
-	src="<%=basePath%>resources/js/jquery-1.11.1.js"></script>
-<script type="text/javascript"
-	src="<%=basePath%>resources/js/jquery.bootstrap.newsbox.min.js"></script>
-	<script type="text/javascript"
-	src="<%=basePath%>resources/bootstrap3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="<%=basePath%>resources/js/echarts.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/js/jquery.bootstrap.newsbox.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/bootstrap3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/js/echarts.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<%=basePath%>resources/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 
-<link rel="stylesheet" style="text/css"
-	href="<%=basePath%>resources/bootstrap3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" style="text/css"
-	href="<%=basePath%>resources/bootstrap3.3.5/css/bootstrap-theme.min.css">
-<link rel="stylesheet" style="text/css"
-	href="<%=basePath%>resources/css/default.css">
-<link rel="stylesheet" style="text/css"
-	href="<%=basePath%>resources/css/normalize.css">
-<link rel="stylesheet" style="text/css"
-	href="<%=basePath%>resources/css/site.css">
+<link rel="stylesheet" style="text/css" href="<%=basePath%>resources/bootstrap3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" style="text/css" href="<%=basePath%>resources/bootstrap3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" style="text/css" href="<%=basePath%>resources/css/default.css">
+<link rel="stylesheet" style="text/css" href="<%=basePath%>resources/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" style="text/css" href="<%=basePath%>resources/css/normalize.css">
+<link rel="stylesheet" style="text/css" href="<%=basePath%>resources/css/site.css">
+
 </head>
 <body>
 	<div class="container">
@@ -88,12 +83,32 @@
 						</div>
 	<div class="tab-pane fade" id="track">
 		<p></p>
+		<div class="form-horizontal">
+			<div class="form-group ">
+            	<label class="col-md-2 control-label">开始日期:</label>
+	                <div id="datetimeStart" class="input-group date form_date col-md-5" data-date="" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+	                    <input class="form-control" size="16" type="text" value="" readonly>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+	                </div>
+				<input type="hidden"  value="" />
+			</div>
+			<div class="form-group ">
+            	<label class="col-md-2 control-label">结束日期:</label>
+	                <div  id="datetimeEnd" class="input-group date form_date col-md-5" data-date="" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+	                    <input class="form-control" size="16" type="text" value="" readonly>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+	                </div>
+				<input type="hidden" value="" />
+			</div>
+		</div>
 		<div id="ditu" style="width: 750px;height:400px;">
 		</div>
 		<p></p>
 		<div class="form-horizontal">
 			<div class="form-group ">
-				<label class="col-md-2 control-label">日期:</label>
+				<label class="col-md-2 control-label">具体日期:</label>
 				<div class="col-md-5">
 					<input type="text" class="form-control" id="date">
 				</div>
@@ -105,13 +120,13 @@
 				</div>
 			</div>	
 			<div class="form-group">
-				<label for="destination" class="col-md-2 control-label">目的地</label>
+				<label for="destination" class="col-md-2 control-label">目的地:</label>
 				<div class="col-md-5">
 					<input type="text" class="form-control" id="destination">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="hotel" class="col-md-2 control-label">入住酒店</label>
+				<label for="hotel" class="col-md-2 control-label">入住酒店:</label>
 				<div class="col-md-5">
 					<select class="form-control" id="hotel">
 						<c:forEach items="${list_hotel }" var="hotel">
@@ -133,6 +148,7 @@
 						<th>出发地</th>
 						<th>目的地</th>
 						<th>入住酒店</th>
+						<th>房间号</th>
 						<th>同行联系人</th>
 					</tr>
 				</thead>
@@ -143,6 +159,7 @@
 						<th>伊斯兰堡</th>
 						<th>卡拉奇</th>
 						<th>卡拉奇酒店</th>
+						<th>110</th>
 						<th>Jack Doson</th>
 					</tr>
 					<tr>
@@ -151,6 +168,7 @@
 						<th>伊斯兰堡</th>
 						<th>卡拉奇</th>
 						<th>卡拉奇酒店</th>
+						<th>111</th>
 						<th>Jack Doson</th>
 					</tr>
 					<tr>
@@ -159,6 +177,7 @@
 						<th>伊斯兰堡</th>
 						<th>卡拉奇</th>
 						<th>卡拉奇酒店</th>
+						<th>110</th>
 						<th>Jack Doson</th>
 					</tr>
 					<tr>
@@ -167,6 +186,7 @@
 						<th>伊斯兰堡</th>
 						<th>卡拉奇</th>
 						<th>卡拉奇酒店</th>
+						<th>110</th>
 						<th>Jack Doson</th>
 					</tr>
 				</tbody>
@@ -267,13 +287,14 @@
 						<th>事件</th>
 						<th>地点</th>
 						<th>设备信息</th>
+						<th>包含该事件的资源数</th>
 						<th>详情</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>20100512</td><td>使用电脑登陆Facebook</td><td>卡拉奇</td><td>IP地址:192.0.0.1</td><td><a href="#">详细信息</a></td></tr>
-					<tr><td>20121002</td><td>发表关于XXX的评论</td><td>卡拉奇</td><td>IP地址:192.0.0.1</td><td><a href="#">详细信息</a></td></tr>
-					<tr><td>20140211</td><td>出席XXXX国际会议</td><td>白沙瓦</td><td>无</td><td><a href="#">详细信息</a></td></tr>
+					<tr><td>20100512</td><td>使用电脑登陆Facebook</td><td>卡拉奇</td><td>IP地址:192.0.0.1</td><td>20</td><td><a href="#">详细信息</a></td></tr>
+					<tr><td>20121002</td><td>发表关于XXX的评论</td><td>卡拉奇</td><td>IP地址:192.0.0.1</td><td>20</td><td><a href="#">详细信息</a></td></tr>
+					<tr><td>20140211</td><td>出席XXXX国际会议</td><td>白沙瓦</td><td>无</td><td>20</td><td><a href="#">详细信息</a></td></tr>
 				</tbody>
 			</table>
 	</div>
@@ -595,7 +616,34 @@ function search(){
 		});
 	}
 echartDitu();
+$('#datetimeStart').datetimepicker({
+    language:  'zh-CN',
+    format: 'yyyy-mm-dd',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	minView: 2,
+	forceParse: 0
+}).on("click",function(){
+    $("#datetimeStart").datetimepicker("setEndDate",$("#datetimeEnd").val())
+});
 
+$('#datetimeEnd').datetimepicker({
+    language:  'zh-CN',
+    format: 'yyyy-mm-dd',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	minView: 2,
+	forceParse: 0,
+	startDate:new Date()
+}).on("click",function(){
+    $("#datetimeEnd").datetimepicker("setStartDate",$("#datetimeStart".val()))
+});
 </script>
 </body>
 </html>

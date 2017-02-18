@@ -12,7 +12,7 @@ $.get('/Taian_Project/resources/flights.json', function(data) {
     });
     myChart.setOption(option = {
         title: {
-            text: '活动轨迹图',
+            text: '历史轨迹',
             left: 'center',
             textStyle: {
                 color: '#eee'
