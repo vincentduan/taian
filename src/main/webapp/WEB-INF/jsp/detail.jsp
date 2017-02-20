@@ -251,7 +251,10 @@
 	</div>
 	<div class="tab-pane fade" id="personrel">
 		<p></p>
-		<h4>关系</h4>
+		<fieldset>
+            <legend>Test</legend>
+        </fieldset>
+		<h4>社会关系</h4>
 		<dl>
 			<dt>妻子：</dt>
 			<dd>张三(92%),李四(31%)</dd>
