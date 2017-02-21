@@ -79,6 +79,18 @@
 												<a class="btn btn-danger disabled" role="button">危险</a>
 											</div>
 										</div>
+										<div class="form-group ">
+											<label class="col-sm-2 control-label">宗教信仰：</label>
+											<div class="col-sm-10">
+												<p class="form-control-static">伊斯兰教</p>
+											</div>
+										</div>
+										<div class="form-group ">
+											<label class="col-sm-2 control-label">所属党派：</label>
+											<div class="col-sm-10">
+												<p class="form-control-static">执政党</p>
+											</div>
+										</div>
 									</div>
 						</div>
 	<div class="tab-pane fade" id="track">
@@ -199,7 +211,7 @@
 		
 		<div id="mc" style="width: 750px;height:400px">
 		</div>
-		<table id="contentTable" class="table table-striped table-bordered">
+		<table id="contentTable_mc" class="table table-striped table-bordered">
 			<thead>
 				<tr>
 					<th>媒体</th>
@@ -217,7 +229,7 @@
 		</table>
 		<div id="mc2" style="width: 750px;height:400px">
 		</div>
-		<table id="contentTable2" class="table table-striped table-bordered">
+		<table id="contentTable_mc2" class="table table-striped table-bordered">
 			<thead>
 				<tr>
 					<th>搜索引擎</th>
@@ -295,7 +307,7 @@
 	</div>
 	<div class="tab-pane fade" id="event">
 		<p></p>
-		<table id="contentTable" class="table table-striped table-bordered">
+		<table id="contentTable_event" class="table table-striped table-bordered">
 				<thead>
 					<tr>
 						<th>日期</th>
@@ -323,7 +335,7 @@
 							</address>
 					<div class="panel panel-danger">
 						<div class="panel-heading">
-							<h3 class="panel-title">警告事件</h3>
+							<h3 class="panel-title">告警事件</h3>
 						</div>
 						<div class="panel-body">
 							<p>2017年2月17日,基地组织领导人与Nawaz Sharif入住卡拉奇酒店</p>
@@ -620,7 +632,7 @@ function search(){
 							+ "</td>" + "<td>"
 							+ result[i].destination + "</td>"
 							+ "<td>" + result[i].hotel + "</td>"
-							+ "<td>" + rel + "</td>" + "</tr>";
+							+ "<td>" + rel + "</td>" + "<td>XXX</td></tr>";
 					$("#contentTable").append(trHTML);
 
 				})
