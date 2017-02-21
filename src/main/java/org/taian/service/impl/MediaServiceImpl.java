@@ -17,13 +17,13 @@ public class MediaServiceImpl implements MediaService {
 	//注入Service依赖
 	@Autowired
 	private MediaDao mediaDao;
-	
-
-
-	@Override
 	public List<Media> getMediaListByPersonID(int personid) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+
+
+	
 
 }

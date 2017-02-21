@@ -154,40 +154,40 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>20100601</th>
-						<th>PK301</th>
-						<th>伊斯兰堡</th>
-						<th>卡拉奇</th>
-						<th>卡拉奇酒店</th>
-						<th>110</th>
-						<th>Jack Doson</th>
+						<td>20100601</td>
+						<td>PK301</td>
+						<td>伊斯兰堡</td>
+						<td>卡拉奇</td>
+						<td>卡拉奇酒店</td>
+						<td>110</td>
+						<td>Jack Doson</td>
 					</tr>
 					<tr>
-						<th>20100601</th>
-						<th>PK301</th>
-						<th>伊斯兰堡</th>
-						<th>卡拉奇</th>
-						<th>卡拉奇酒店</th>
-						<th>111</th>
-						<th>Jack Doson</th>
+						<td>20100601</td>
+						<td>PK301</td>
+						<td>伊斯兰堡</td>
+						<td>卡拉奇</td>
+						<td>卡拉奇酒店</td>
+						<td>111</td>
+						<td>Jack Doson</td>
 					</tr>
 					<tr>
-						<th>20100601</th>
-						<th>PK301</th>
-						<th>伊斯兰堡</th>
-						<th>卡拉奇</th>
-						<th>卡拉奇酒店</th>
-						<th>110</th>
-						<th>Jack Doson</th>
+						<td>20100601</td>
+						<td>PK301</td>
+						<td>伊斯兰堡</td>
+						<td>卡拉奇</td>
+						<td>卡拉奇酒店</td>
+						<td>110</td>
+						<td>Jack Doson</td>
 					</tr>
 					<tr>
-						<th>20100601</th>
-						<th>PK301</th>
-						<th>伊斯兰堡</th>
-						<th>卡拉奇</th>
-						<th>卡拉奇酒店</th>
-						<th>110</th>
-						<th>Jack Doson</th>
+						<td>20100601</td>
+						<td>PK301</td>
+						<td>伊斯兰堡</td>
+						<td>卡拉奇</td>
+						<td>卡拉奇酒店</td>
+						<td>110</td>
+						<td>Jack Doson</td>
 					</tr>
 				</tbody>
 			</table>
@@ -252,34 +252,46 @@
 	<div class="tab-pane fade" id="personrel">
 		<p></p>
 		<fieldset>
-            <legend>Test</legend>
+            <legend>社会关系</legend>
+            <dl class="dl-horizontal">
+			  <dt>妻子：</dt>
+			  <dd>张三(92%),李四(31%)</dd>
+			</dl>
+			<dl class="dl-horizontal">
+			  <dt>儿子：</dt>
+			  <dd>王五(100%)</dd>
+			</dl>
+			<dl class="dl-horizontal">
+			  <dt>女儿：</dt>
+			  <dd>赵六(100%)</dd>
+			</dl>
         </fieldset>
-		<h4>社会关系</h4>
-		<dl>
-			<dt>妻子：</dt>
-			<dd>张三(92%),李四(31%)</dd>
-			<dt>儿子：</dt>
-			<dd>王五(100%)</dd>
-			<dt>女儿：</dt>
-			<dd>赵六(100%)</dd>
-		</dl>
-		<hr>
-		<h4>邮箱(3个)</h4>
-		<dl>
-			<dt>1.邮箱 Mamnoon Hussain@google.com</dt>
-			<dd>联系人:  1@google.com, 2@google.com, 3@google.com,4@google.com</dd>
-			<dt>2.邮箱 Mamnoon Hussain@google.com</dt>
-			<dd>联系人:  1@google.com, 2@google.com, 3@google.com</dd>
-			<dt>2.邮箱 Mamnoon Hussain@google.com</dt>
-			<dd>联系人:  1@google.com, 2@google.com, 3@google.com</dd>
-		</dl>
-		<h4>skype(2个)</h4>
-		<dl>
-			<dt>1.邮箱 Mamnoon Hussain@skype.com</dt>
-			<dd>联系人:  1@skype.com, 2@skype.com, 3@skype.com,4@skype.com</dd>
-			<dt>2.邮箱 Mamnoon Hussain@skype.com</dt>
-			<dd>联系人:  1@skype.com, 2@skype.com, 3@skype.com</dd>
-		</dl>
+        <fieldset>
+            <legend>邮箱(3个)</legend>
+            <dl class="dl-horizontal">
+			  <dt style="width:180px">Sharif@google.com</dt>
+			  <dd style="margin-left:200px">联系人<br>1@google.com<br>2@google.com<br>3@google.com<br>4@google.com</dd>
+			</dl>
+			<dl class="dl-horizontal">
+			  <dt style="width:180px">Sharif@hotMail.com</dt>
+			  <dd style="margin-left:200px">联系人<br>1@google.com<br>2@google.com<br>3@google.com</dd>
+			</dl>
+			<dl class="dl-horizontal">
+			  <dt style="width:180px">Sharif@facebook.com</dt>
+			  <dd style="margin-left:200px">联系人<br>1@google.com<br>2@google.com<br>3@google.com</dd>
+			</dl>
+        </fieldset>
+         <fieldset>
+            <legend>skype(2个)</legend>
+            <dl class="dl-horizontal">
+			  <dt style="width:250px">Mamnoon Hussain@skype.com</dt>
+			  <dd style="margin-left:260px">联系人<br>1@google.com<br>2@google.com<br>3@google.com<br>4@google.com</dd>
+			</dl>
+			<dl class="dl-horizontal">
+			  <dt style="width:250px">Mamnoon Hussain@skype.com</dt>
+			  <dd style="margin-left:260px">联系人<br>1@google.com<br>2@google.com<br>3@google.com</dd>
+			</dl>
+        </fieldset>
 	</div>
 	<div class="tab-pane fade" id="event">
 		<p></p>
@@ -437,7 +449,6 @@ function showTab(){
 
 function echartMC(){
 	var myChart = echarts.init(document.getElementById('mc'));
-	console.log("echartMC");
     // 指定图表的配置项和数据
     var option = {
     		title: {
@@ -628,9 +639,10 @@ $('#datetimeStart').datetimepicker({
 	todayHighlight: 1,
 	startView: 2,
 	minView: 2,
-	forceParse: 0
-}).on("click",function(){
-    $("#datetimeStart").datetimepicker("setEndDate",$("#datetimeEnd").val())
+	forceParse: 0,
+	endDate: new Date()
+}).on("changeDate",function(){
+    $("#datetimeEnd").datetimepicker("setStartDate",$("#datetimeStart input").val());
 });
 
 $('#datetimeEnd').datetimepicker({
@@ -643,9 +655,7 @@ $('#datetimeEnd').datetimepicker({
 	startView: 2,
 	minView: 2,
 	forceParse: 0,
-	startDate:new Date()
-}).on("click",function(){
-    $("#datetimeEnd").datetimepicker("setStartDate",$("#datetimeStart".val()))
+	/* startDate:new Date()  */
 });
 </script>
 </body>

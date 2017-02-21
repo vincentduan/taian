@@ -18,13 +18,11 @@ public class PersonServiceImpl implements PersonService {
 	@Autowired
 	private PersonDao personDao;
 	
-	@Override
 	public List<Person> getPersonList() {
 		// TODO Auto-generated method stub
 		return personDao.queryAll();
 	}
 
-	@Override
 	public Person getById(int id) {
 		// TODO Auto-generated method stub
 		return personDao.queryById(id);
