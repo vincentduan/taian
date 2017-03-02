@@ -38,6 +38,7 @@ public class PersonController {
 	
 	@RequestMapping(value="/{id}/detail", method = RequestMethod.GET)
 	public String detail(@PathVariable("id") int id, Model model){
+		id = 3;
 		Person person = personService.getById(id);
 		System.out.println(person);
 		model.addAttribute(person);
@@ -49,12 +50,12 @@ public class PersonController {
 			}
 		}
 		model.addAttribute("list_hotel", list_hotel);
+		
 		return "detail";
 	}
 	
 	@RequestMapping(value="/{id}/media")
 	public List<Track> track_list(@PathVariable("id") int id, Model model){
-		
 		return null;
 	}
 	

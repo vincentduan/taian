@@ -29,7 +29,7 @@
 				<h2> ${person.name } <small><c:if test="${person.threatDegree == '0'}">一般人物</c:if>
 					<c:if test="${person.threatDegree == '1'}">主要人物</c:if>
 					<c:if test="${person.threatDegree == '2'}">重点任务</c:if>
-					<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>已关注</button> </small>
+					<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>被监控</button> </small>
 				</h2>
 				<hr>
 					<ul id="myTab" class="nav nav-tabs">
@@ -208,7 +208,26 @@
 	<!-- track end -->
 	<div class="tab-pane fade" id="mediaCoverage">
 		<p></p>
-		
+		<div class="form-horizontal">
+			<div class="form-group ">
+            	<label class="col-md-2 control-label">开始日期:</label>
+	                <div id="datetimeStart_m" class="input-group date form_date col-md-5" data-date="" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+	                    <input class="form-control" size="16" type="text" value="" readonly>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+	                </div>
+				<input type="hidden"  value="" />
+			</div>
+			<div class="form-group ">
+            	<label class="col-md-2 control-label">结束日期:</label>
+	                <div  id="datetimeEnd_m" class="input-group date form_date col-md-5" data-date="" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+	                    <input class="form-control" size="16" type="text" value="" readonly>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+	                </div>
+				<input type="hidden" value="" />
+			</div>
+		</div>
 		<div id="mc" style="width: 750px;height:400px">
 		</div>
 		<table id="contentTable_mc" class="table table-striped table-bordered">
@@ -658,6 +677,33 @@ $('#datetimeStart').datetimepicker({
 });
 
 $('#datetimeEnd').datetimepicker({
+    language:  'zh-CN',
+    format: 'yyyy-mm-dd',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	minView: 2,
+	forceParse: 0,
+	/* startDate:new Date()  */
+});
+$('#datetimeStart_m').datetimepicker({
+    language:  'zh-CN',
+    format: 'yyyy-mm-dd',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	minView: 2,
+	forceParse: 0,
+	endDate: new Date()
+}).on("changeDate",function(){
+    $("#datetimeEnd_m").datetimepicker("setStartDate",$("#datetimeStart_m input").val());
+});
+
+$('#datetimeEnd_m').datetimepicker({
     language:  'zh-CN',
     format: 'yyyy-mm-dd',
     weekStart: 1,
