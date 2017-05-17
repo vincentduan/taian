@@ -28,13 +28,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<h2>穆斯林联盟<small>重要组织&nbsp<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>已关注</button> </small>
+				<h2>穆斯林联盟<small>重要组织&nbsp<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>被监控</button> </small>
 				</h2>
 				<hr>
 					<ul id="myTab" class="nav nav-tabs">
 						<li class="active"><a href="javascript:void(0);" tab="org" >资料</a></li>
 						<li><a href="javascript:void(0);" tab="mediaCoverage">媒体报道</a></li>
-						<li><a href="javascript:void(0);" tab="personrel">组织关系</a></li>
+						<!-- <li><a href="javascript:void(0);" tab="personrel">组织关系</a></li> -->
 						<li><a href="javascript:void(0);" tab="event">事件 </a></li>
 					</ul>
 					<div id="myTabContent" class="tab-content">
@@ -44,7 +44,7 @@
 										<div class="form-group ">
 											<label class="col-sm-3 control-label">组织名称：</label>
 											<div class="col-sm-9">
-												<p class="form-control-static">Mamnoon Hussain</p>
+												<p class="form-control-static">Pakistan Muslim League</p>
 											</div>
 										</div>
 										<div class="form-group ">
@@ -74,7 +74,7 @@
 										<div class="form-group ">
 											<label class="col-sm-3 control-label">网站：</label>
 											<div class="col-sm-9">
-												<p class="form-control-static"><a href="#">www.Mamnoon Hussain.com</a></p>
+												<p class="form-control-static"><a href="#">www.Muslim-League.com</a></p>
 											</div>
 										</div>
 										<div class="form-group ">
@@ -145,9 +145,9 @@
 </div>
 			</div>
 			<div class="col-md-4">
-				<br> <img src="<%=basePath %>resources/images/avatar2.jpg" alt="乔杜里·舒贾特·侯赛因" class="img-rounded img-responsive" width="50%"> <br>
+				<br> <img src="<%=basePath %>resources/images/Flag_of_Muslim_League.png" alt="乔杜里·舒贾特·侯赛因" class="img-rounded img-responsive" width="50%"> <br>
 							<address>
-								<strong>Twitter, Inc.</strong><br> 1355 Market Street, Suite 900<br> San Francisco, CA 94103<br> <abbr title="Phone">P:</abbr> (123) 456-7890
+								<strong>Twitter, Inc.</strong><br> <a>@Muslim-League</a><br> Islamabad,Pakistan<br> <abbr title="Phone">website:</abbr> www.Muslim-League.com
 							</address>
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -159,7 +159,7 @@
 										<li class="news-item">
 											<table cellpadding="4">
 												<tr>
-													<td><img src="<%=basePath %>resources/images/1.png" width="60" class="img-circle" /></td>
+													<td><img src="<%=basePath %>resources/images/gas_mask.png" width="60" class="img-circle" /></td>
 													<!-- <td><strong>5分钟前</strong>收到 <a href="#">邮箱联系人Hillary</a>发送的邮件......<small><a href="#">详细内容</a></small></td> -->
 													<td>在<a href="#">巴基斯坦</a>组织50次<strong>爆炸袭击</strong>.... <a href="#">详细信息</a></td>
 												</tr>
@@ -168,7 +168,7 @@
 										<li class="news-item">
 											<table cellpadding="4">
 												<tr>
-													<td><img src="<%=basePath %>resources/images/2.png" width="60" class="img-circle" /></td>
+													<td><img src="<%=basePath %>resources/images/linkedin.png" width="60" class="img-circle" /></td>
 													<!-- <td><strong>6分钟前</strong>接听了 <a href="#">手机联系人Hillary</a>打来的电话 ......<small><a href="#">详细内容</a></small></td> -->
 													<td>在<a href="#">阿富汗</a>组织了85次<strong>枪击事件</strong>....<a>详细信息</a></td>
 												</tr>
@@ -177,7 +177,7 @@
 										<li class="news-item">
 											<table cellpadding="4">
 												<tr>
-													<td><img src="<%=basePath %>resources/images/3.png" width="60" class="img-circle" /></td>
+													<td><img src="<%=basePath %>resources/images/facebook.png" width="60" class="img-circle" /></td>
 													<!-- <td><strong>8分钟内</strong>收到 <a href="#">Facebook好友Hillary</a>的点赞 ......<small><a href="#">详细内容</a></small></td> -->
 													<td>在<a href="#">印度</a>组织50次<strong>爆炸袭击</strong>....<a>详细信息</a></td>
 												</tr>
@@ -186,7 +186,7 @@
 										<li class="news-item">
 											<table cellpadding="4">
 												<tr>
-													<td><img src="<%=basePath %>resources/images/4.png" width="60" class="img-circle" /></td>
+													<td><img src="<%=basePath %>resources/images/twitter2.png" width="60" class="img-circle" /></td>
 													<!-- <td><strong>10分钟前</strong>收到 <a href="#">Twitter好友Hillary</a>的点赞 ......<small><a href="#">详细内容</a></small></td> -->
 													<td>在<a href="#">伊朗</a>组织50次<strong>人质劫持</strong>....<a>详细信息</a></td>
 												</tr>
@@ -195,7 +195,7 @@
 										<li class="news-item">
 											<table cellpadding="4">
 												<tr>
-													<td><img src="<%=basePath %>resources/images/5.png" width="60" class="img-circle" /></td>
+													<td><img src="<%=basePath %>resources/images/call.png" width="60" class="img-circle" /></td>
 													<!-- <td><strong>15分钟前</strong>收到 <a href="#">Skype好友Hillary</a>的视频邀请 ......<small><a href="#">详细内容</a></small></td> -->
 													<td>共收到30次视频邀请....<a>详细信息</a></td>
 												</tr>
@@ -204,7 +204,7 @@
 										<li class="news-item">
 											<table cellpadding="4">
 												<tr>
-													<td><img src="<%=basePath %>resources/images/6.png" width="60" class="img-circle" /></td>
+													<td><img src="<%=basePath %>resources/images/wechat2.png" width="60" class="img-circle" /></td>
 													<!-- <td><strong>20分钟前</strong>收到 <a href="#">Facebook好友Hillary</a>的点赞 ......<small><a href="#">详细内容</a></small></td> -->
 													<td>共收到30次视频邀请....<a>详细信息</a></td>
 												</tr>
@@ -213,9 +213,36 @@
 										<li class="news-item">
 											<table cellpadding="4">
 												<tr>
-													<td><img src="<%=basePath %>resources/images/7.png" width="60" class="img-circle" /></td>
+													<td><img src="<%=basePath %>resources/images/message.png" width="60" class="img-circle" /></td>
 													<!-- <td><strong>25分钟前</strong>接受了 <a href="#">BBC记者Hillary</a>的采访 ......<small><a href="#">详细内容</a></small></td> -->
 													<td>在<a href="#">伊拉克</a>组织50次恐怖袭击....<a>详细信息</a></td>
+												</tr>
+											</table>
+										</li>
+										<li class="news-item">
+											<table cellpadding="4">
+												<tr>
+													<td><img src="<%=basePath %>resources/images/bomb.png" width="60" class="img-circle" /></td>
+													<!-- <td><strong>25分钟前</strong>接受了 <a href="#">BBC记者Hillary</a>的采访 ......<small><a href="#">详细内容</a></small></td> -->
+													<td>在<a href="#">叙利亚</a>组织99次恐怖袭击....<a>详细信息</a></td>
+												</tr>
+											</table>
+										</li>
+										<li class="news-item">
+											<table cellpadding="4">
+												<tr>
+													<td><img src="<%=basePath %>resources/images/gun.png" width="60" class="img-circle" /></td>
+													<!-- <td><strong>25分钟前</strong>接受了 <a href="#">BBC记者Hillary</a>的采访 ......<small><a href="#">详细内容</a></small></td> -->
+													<td>在<a href="#">伊朗</a>组织7次枪击事件....<a>详细信息</a></td>
+												</tr>
+											</table>
+										</li>
+										<li class="news-item">
+											<table cellpadding="4">
+												<tr>
+													<td><img src="<%=basePath %>resources/images/video2.png" width="60" class="img-circle" /></td>
+													<!-- <td><strong>25分钟前</strong>接受了 <a href="#">BBC记者Hillary</a>的采访 ......<small><a href="#">详细内容</a></small></td> -->
+													<td>在<a href="#">伊朗</a>组织7次枪击事件....<a>详细信息</a></td>
 												</tr>
 											</table>
 										</li>

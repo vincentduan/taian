@@ -56,6 +56,18 @@
 											</div>
 										</div>
 										<div class="form-group ">
+											<label class="col-sm-2 control-label">出生年月：</label>
+											<div class="col-sm-10">
+												<p class="form-control-static">1949年12月25日</p>
+											</div>
+										</div>
+										<div class="form-group ">
+											<label class="col-sm-2 control-label">职务：</label>
+											<div class="col-sm-10">
+												<p class="form-control-static">总理</p>
+											</div>
+										</div>
+										<div class="form-group ">
 											<label class="col-sm-2 control-label">邮箱：</label>
 											<div class="col-sm-10">
 												<p class="form-control-static">Mamnoon Hussain@google.com</p>
